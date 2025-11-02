@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ONG Animacão — Cadastro</title>
+  <meta name="description" content="Formulário de cadastro de voluntários e apoiadores.">
+  <link rel="icon" href="assets/img/html-image.png" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <a href="index.html">ONG Animacão</a>
+      </div>
+
+      <div class="nav">
+        <input class="nav__checkbox" type="checkbox" id="nav-toggle" aria-label="Abrir menu de navegação">
+        <label class="nav__toggle" for="nav-toggle" aria-controls="menu-principal" aria-expanded="false">
+          <span class="hamb" aria-hidden="true"></span>
+          Menu
+        </label>
+
+        <ul id="menu-principal" class="nav__menu" role="menubar">
+          <li role="none"><a role="menuitem" href="index.html">Início</a></li>
+          <li class="has-submenu" role="none">
+            <a role="menuitem" href="projetos.html">Projetos</a>
+            <ul class="submenu" role="menu">
+              <li role="none"><a role="menuitem" href="projetos.html#adocao">Adoção</a></li>
+              <li role="none"><a role="menuitem" href="projetos.html#castracao">Castração</a></li>
+              <li role="none"><a role="menuitem" href="projetos.html#lar-temporario">Lar temporário</a></li>
+              <li role="none"><a role="menuitem" href="projetos.html#doacoes">Doações</a></li>
+            </ul>
+          </li>
+          <li role="none"><a role="menuitem" href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <header class="container">
+      <h1>Cadastro</h1>
+      <p>Preencha seus dados. Campos marcados com " * " são obrigatórios.</p>
+    </header>
+
+    <form class="card" action="#" method="post" aria-describedby="ajuda-form">
+      <p id="ajuda-form" class="muted"></p>
+
+      <fieldset>
+        <legend>Dados pessoais</legend>
+
+        <div>
+          <label for="nome">Nome completo *</label>
+          <input id="nome" name="nome" type="text" required autocomplete="name">
+        </div>
+
+        <div>
+          <label for="email">E-mail *</label>
+          <input id="email" name="email" type="email" required autocomplete="email" inputmode="email">
+        </div>
+
+        <div>
+          <label for="cpf">CPF *</label>
+          <input id="cpf" name="cpf" type="text" required inputmode="numeric" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" maxlength="14" placeholder="000.000.000-00" aria-describedby="dica-cpf" title="Informe 11 dígitos (com ou sem pontuação).">
+          <small id="dica-cpf">Formato aceito: 000.000.000-00 (pontuação opcional).</small>
+        </div>
+
+        <div>
+          <label for="telefone">Telefone *</label>
+          <input id="telefone" name="telefone" type="tel" required inputmode="tel" pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}" placeholder="(11) 90000-0000" aria-describedby="dica-tel" title="Use DDD e 8 ou 9 dígitos.">
+          <small id="dica-tel">Ex.: (11) 90000-0000</small>
+        </div>
+
+        <div>
+          <label for="nascimento">Data de nascimento *</label>
+          <input id="nascimento" name="nascimento" type="date" required max="2025-10-29">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço</legend>
+
+        <div>
+          <label for="endereco">Endereço *</label>
+          <input id="endereco" name="endereco" type="text" required autocomplete="street-address">
+        </div>
+
+        <div>
+          <label for="cep">CEP *</label>
+          <input id="cep" name="cep" type="text" required inputmode="numeric" pattern="\d{5}-?\d{3}" placeholder="00000-000" aria-describedby="dica-cep" title="Informe 8 dígitos (com ou sem hífen).">
+          <small id="dica-cep">Ex.: 01234-567</small>
+        </div>
+
+        <div>
+          <label for="cidade">Cidade *</label>
+          <input id="cidade" name="cidade" type="text" required autocomplete="address-level2">
+        </div>
+
+        <div>
+          <label for="estado">Estado *</label>
+          <input id="estado" name="estado" type="text" required autocomplete="address-level1" maxlength="2" placeholder="SP">
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn">Enviar cadastro</button>
+      <p><small>Ao enviar, seus dados serão tratados conforme nossa política de privacidade.</small></p>
+    </form>
+  </main>
+
+  <footer>
+    <p><small>&copy; 2025 ONG Animacão — Cadastro de voluntários e apoiadores.</small></p>
+  </footer>
+</body>
+</html>

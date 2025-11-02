@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ONG Animacão — Início</title>
+  <meta name="description" content="Plataforma web para ONGs: missão, projetos, doações e voluntariado.">
+  <link rel="icon" href="assets/img/html-image.png" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <a href="index.html">ONG Animacão</a>
+      </div>
+
+      <div class="nav">
+        <input class="nav__checkbox" type="checkbox" id="nav-toggle" aria-label="Abrir menu de navegação">
+        <label class="nav__toggle" for="nav-toggle" aria-controls="menu-principal" aria-expanded="false">
+          <span class="hamb" aria-hidden="true"></span>
+          Menu
+        </label>
+
+        <ul id="menu-principal" class="nav__menu" role="menubar">
+          <li role="none"><a role="menuitem" href="index.html" aria-current="page">Início</a></li>
+          <li class="has-submenu" role="none">
+            <a role="menuitem" href="projetos.html">Projetos</a>
+            <ul class="submenu" role="menu">
+              <li role="none"><a role="menuitem" href="projetos.html#adocao">Adoção</a></li>
+              <li role="none"><a role="menuitem" href="projetos.html#castracao">Castração</a></li>
+              <li role="none"><a role="menuitem" href="projetos.html#lar-temporario">Lar temporário</a></li>
+              <li role="none"><a role="menuitem" href="projetos.html#doacoes">Doações</a></li>
+            </ul>
+          </li>
+          <li role="none"><a role="menuitem" href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="container" aria-labelledby="titulo-hero">
+      <h1 id="titulo-hero">Resgatando e transformando vidas com transparência e amor</h1>
+      <figure class="rounded shadow-1">
+        <img src="assets/img/fachada.png" alt="Pessoas colaborando em ações sociais da ONG">
+        <figcaption>Destaque: </figcaption>
+      </figure>
+      <p>Conheça nossa missão, projetos e formas de apoiar como doador ou voluntário.</p>
+      <p>
+        <a class="btn" href="projetos.html">Ver projetos</a>
+        <a class="btn btn--ghost" href="cadastro.html">Quero ser voluntário</a>
+      </p>
+    </section>
+
+    <section class="container" aria-labelledby="sobre">
+      <h2 id="sobre">Sobre a organização</h2>
+      <article class="card">
+        <h3>Missão</h3>
+        <p>Promover cuidado a pets resgatados de mals tratos ou abandono por meio de projetos sociais contínuos.</p>
+      </article>
+      <article class="card">
+        <h3>Visão</h3>
+        <p>Direcionar e realocar os animais tratados, promovendo concientização sobre o cuidado que cada pet necessita, impactando assim nas regiões onde atuamos.</p>
+      </article>
+      <article class="card">
+        <h3>Valores</h3>
+        <ul>
+          <li>Transparência</li>
+          <li>Respeito</li>
+          <li>Equidade</li>
+          <li>Colaboração</li>
+        </ul>
+      </article>
+      <figure class="rounded shadow-1">
+        <img src="assets/img/equipe-full.png" alt="Equipe da ONG reunida">
+        <figcaption>Nossa equipe</figcaption>
+      </figure>
+    </section>
+
+    <section class="container" aria-labelledby="contato">
+      <h2 id="contato">Contato</h2>
+      <address>
+        <p>Rua Inventada, 123 — Centro — São Paulo/SP</p>
+        <p>E-mail: <a href="mailto:contato@onganimacao.org">contato@onganimacao.org</a></p>
+        <p>Telefone/WhatsApp: <a href="tel:+5511998765432">+55 (11) 9 9876-5432</a></p>
+      </address>
+      <ul role="list">
+        <li><a href="instagram.com" rel="me">Instagram</a></li>
+        <li><a href="facebook.com" rel="me">Facebook</a></li>
+        <li><a href="linkedin.com" rel="me">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p><small>&copy; 2025 ONG Animacão — Todos os direitos reservados.</small></p>
+  </footer>
+</body>
+</html>

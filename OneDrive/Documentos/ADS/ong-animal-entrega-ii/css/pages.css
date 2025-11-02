@@ -1,0 +1,37 @@
+/* =========================
+   pages.css — estilos por página e responsividade
+   ========================= */
+
+/* index hero */
+#titulo-hero { margin-top: var(--space-3); }
+main section:first-of-type figure { margin: var(--space-2) 0; }
+
+/* contato */
+address p { margin: 0; }
+address a { text-decoration: underline; }
+
+/* projetos — grid responsivo de cards */
+#lista-projetos {
+  display: grid;
+  gap: var(--space-2);
+}
+@media (min-width: 480px) {
+  #lista-projetos { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  #lista-projetos { grid-template-columns: repeat(3, 1fr); }
+}
+#lista-projetos > article figure {
+  margin: var(--space-2) 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+#lista-projetos > article p strong { color: var(--color-secondary); }
+
+/* cadastro */
+form button[type="submit"] { margin-top: var(--space-2); }
+
+/* Navegação: pequenos ajustes */
+@media (max-width: 768px) {
+  header .wrap { gap: 10px; }
+}
