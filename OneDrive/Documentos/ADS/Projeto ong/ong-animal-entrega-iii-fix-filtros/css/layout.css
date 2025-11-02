@@ -1,0 +1,187 @@
+/* =========================
+   layout.css — Header + Nav responsivo (hambúrguer), Grid 12 col, Footer
+   ========================= */
+
+/* Header */
+header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--gray-200);
+}
+header .wrap {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+}
+.brand a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+/* Nav base */
+.nav {
+  position: relative;
+}
+.nav__checkbox { display: none; }
+.nav__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.nav__toggle .hamb {
+  width: 22px; height: 2px; background: var(--text);
+  position: relative; display: inline-block;
+}
+.nav__toggle .hamb::before, .nav__toggle .hamb::after {
+  content: ""; position: absolute; left: 0; width: 22px; height: 2px; background: var(--text);
+}
+.nav__toggle .hamb::before { top: -6px; }
+.nav__toggle .hamb::after  { top:  6px; }
+
+/* Lista principal (mobile: escondida por padrão) */
+.nav__menu {
+  list-style: none;
+  margin: 0; padding: 0;
+  position: absolute;
+  right: 0; top: calc(100% + 8px);
+  min-width: 240px;
+  background: var(--bg);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  display: none;
+  z-index: 50;
+}
+.nav__menu > li > a,
+.nav__menu > li > button {
+  display: block;
+  padding: 12px 14px;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray-200);
+}
+.nav__menu > li:last-child > a { border-bottom: 0; }
+
+/* Abrir/fechar via checkbox (sem JS) */
+.nav__checkbox:checked ~ ul.nav__menu { display: block; }
+
+/* Submenu */
+.has-submenu { position: relative; }
+.has-submenu > a::after {
+  content: "▾"; margin-left: 6px; font-size: 0.9em; color: var(--text-muted);
+}
+.submenu {
+  list-style: none;
+  margin: 0; padding: 6px 0;
+  position: absolute;
+  left: 0; top: 100%;
+  min-width: 220px;
+  background: var(--bg);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  display: none;
+}
+.submenu li a {
+  display: block;
+  padding: 10px 14px;
+  color: var(--text);
+  border-bottom: 1px solid var(--gray-200);
+}
+.submenu li:last-child a { border-bottom: 0; }
+
+/* Desktop: menu visível, hamburguer some, dropdown on hover/focus */
+@media (min-width: 768px) {
+  .nav__toggle { display: none; }
+  .nav__menu {
+    position: static;
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 0; box-shadow: none;
+    min-width: initial;
+  }
+  .nav__menu > li > a {
+    border: 0;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+  .nav__menu > li > a[aria-current="page"] {
+    background: color-mix(in oklab, var(--color-primary-300) 25%, transparent);
+  }
+  .has-submenu:hover > .submenu,
+  .has-submenu:focus-within > .submenu {
+    display: block;
+  }
+}
+
+/* Mobile: submenu expande em bloco dentro do dropdown */
+@media (max-width: 767.98px) {
+  .has-submenu > .submenu {
+    position: static;
+    display: block;
+    border: 0; box-shadow: none; padding: 0;
+  }
+  .has-submenu > .submenu a { padding-left: 24px; }
+}
+
+/* Main e seções */
+main { padding-block: var(--space-4); }
+main > section,
+main > header,
+main > footer { width: min(100% - 2rem, var(--container)); margin-inline: auto; }
+section + section { margin-top: var(--space-5); }
+
+/* Figures */
+figure {
+  background: var(--bg-muted);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: var(--space-1);
+}
+
+/* Grid 12 colunas */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+[class^="col-"] { grid-column: span 12; }
+
+@media (min-width: 480px) {
+  .sm-col-6 { grid-column: span 6; }
+}
+@media (min-width: 768px) {
+  .col-6  { grid-column: span 6; }
+  .col-4  { grid-column: span 4; }
+  .col-8  { grid-column: span 8; }
+}
+@media (min-width: 1024px) {
+  .lg-col-3 { grid-column: span 3; }
+  .lg-col-4 { grid-column: span 4; }
+  .lg-col-8 { grid-column: span 8; }
+}
+@media (min-width: 1280px) {
+  .xl-col-3 { grid-column: span 3; }
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--gray-200);
+  padding: var(--space-3) 0;
+  background: var(--bg);
+}
+footer p, footer small {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
